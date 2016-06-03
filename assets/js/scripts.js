@@ -21,6 +21,7 @@ $(function() {
   $gameMain.on( "click", ".column-card", function() {
     console.log( "Card Clucked" );
     $(this).children().css( "visibility", "visible" );
+    $(this).addClass( "column-card-flip" );
   });
 
 

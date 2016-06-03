@@ -28,22 +28,31 @@ header {
   margin-right: 10.5em;
 }
 
-/*.row:before,
+.row:before,
 .row:after {
   content: "";
   display: table;
   clear: both;
-}*/
+}
 
 .column-card {
   display: inline-block;
   background-color: #7986cb;
   margin: 0 .075em;
   border-radius: .25em;
+  -webkit-transition: background 1s, transform 1s;
+          transition: background 1s, transform 1s;
+  -webkit-transform: rotateY(0deg);
+         -transform: rotateY(0deg);
 }
 
 .column-card:hover {
   cursor: pointer;
+}
+
+.column-card-flip {
+  -webkit-transform: rotateY(180deg);
+         -transform: rotateY(180deg);
 }
 
 .card-icon {
