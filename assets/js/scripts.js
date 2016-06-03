@@ -17,15 +17,38 @@ $(function() {
   */
 
   var $gameMain = $( ".game-main" );
+  var $seconds = $( ".seconds" );
+  var $minutes = $( ".minutes" );
+  var $hours = $( ".hours" );
+
 
   $gameMain.on( "click", ".column-card", function() {
     console.log( "Card Clucked" );
-    $(this).children().css( "visibility", "visible" );
-    $(this).addClass( "column-card-flip" );
+
+    if( $(this).children().is(":hidden") ) {
+      $(this).children().show();
+      $(this).addClass( "column-card-flip" );
+    }
+
+    else {
+      console.log( "Else is getting through" );
+      $(this).children().hide();
+      $(this).removeClass( "column-card-flip" );
+    }
+
+    // check how many cards are visible
+
   });
 
 
 
+  function gameClock() {
+    jQuery.fx.interval = 1000;
+    for( var timer = 1; timer < 60; timer++ ) {
+      console.log(timer);
+    }
+
+  }
 
 
 

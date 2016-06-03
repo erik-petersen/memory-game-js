@@ -16,9 +16,11 @@ body {
 header {
   margin-bottom: .35em;
 }
+
 .fa-heart-1 {
   padding-left: 10em;
 }
+
 .fa-heart {
   margin-left: .5em;
 }
@@ -28,22 +30,16 @@ header {
   margin-right: 10.5em;
 }
 
-.row:before,
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .column-card {
-  display: inline-block;
+  display: block;
+  float: left;
   background-color: #7986cb;
-  margin: 0 .075em;
+  margin: 0 auto;
   border-radius: .25em;
   -webkit-transition: background 1s, transform 1s;
           transition: background 1s, transform 1s;
-  -webkit-transform: rotateY(0deg);
-         -transform: rotateY(0deg);
+  -webkit-transform: rotateY(180deg);
+         -transform: rotateY(180deg);
 }
 
 .column-card:hover {
@@ -51,12 +47,12 @@ header {
 }
 
 .column-card-flip {
-  -webkit-transform: rotateY(180deg);
-         -transform: rotateY(180deg);
+  -webkit-transform: rotateY(0deg);
+         -transform: rotateY(0deg);
 }
 
 .card-icon {
-  visibility: hidden;
+  display: none;
 }
 
 /*****************************************************************
@@ -152,14 +148,21 @@ BEGIN MEDIA QUERIES
   }
 
   .column-card {
+    position: relative;
     width: 12.5%;
     height: 9.35em;
     margin-bottom: .35em;
+    margin-right: .35em;
   }
 
   .card-icon {
+    box-sizing: border-box;
+    position: absolute;
+    top: -.05em;
+    right: .15em;
+    bottom: .15em;
+    left:.15em;
     font-size: 2.85em;
-    margin-top: 1.18em;
   }
 
 } /* end @media: 48em - 64em */
