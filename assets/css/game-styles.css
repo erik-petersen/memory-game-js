@@ -9,29 +9,46 @@ GLOBAL CSS RULES
 body {
   background-color: #3f51b5;
   width: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
 }
 
-.grid-container {
-  width: 90%;
-  text-align: center;
-  margin: 0 auto;
+header {
+  margin-bottom: .35em;
+}
+.fa-heart-1 {
+  padding-left: 10em;
+}
+.fa-heart {
+  margin-left: .5em;
 }
 
-.row:before,
+.game-clock {
+  float: right;
+  margin-right: 10.5em;
+}
+
+/*.row:before,
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
+}*/
 
-.column {
+.column-card {
   display: inline-block;
   background-color: #7986cb;
   margin: 0 .075em;
   border-radius: .25em;
 }
 
+.column-card:hover {
+  cursor: pointer;
+}
 
+.card-icon {
+  visibility: hidden;
+}
 
 /*****************************************************************
 ******************************************************************
@@ -45,68 +62,95 @@ BEGIN MEDIA QUERIES
 @MEDIA: MAX = 48EM
 *****************************************************************/
 
-@media only screen and ( min-width: 24px ) {
+@media only screen and ( min-width: 2em ) {
+
+  h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
 
   .grid-container {
-
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
   }
 
- .column {
-   /*width: 12em;
-   height: 12em;*/
- }
-
-} /* end @media: min = 64em */
-
-
-@media only screen and ( min-width: 55em ) {
-
-  .row-1,
-  .row-2,
-  .row-3 {
-    position: relative;
-    width: 100%;
-    margin: .35em 0;
-  }
-
-  .column {
-    width: 24%;
-    height: 24%;
+  .column-card {
+    width: 48%;
+    height: 9em;
+    margin-bottom: .25em;
   }
 
   .card-icon {
     font-size: 2.65em;
-    margin-top: 1.8em;
+    margin-top: 1.23em;
+  }
+
+} /* end @media: min = 64em
+
+
+/*****************************************************************
+@MEDIA: MIN = 48EM
+*****************************************************************/
+
+@media only screen and ( min-width: 28em ) {
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
+
+  .grid-container {
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .column-card {
+    width: 20%;
+    height: 9em;
+    margin-bottom: .25em;
+  }
+
+  .card-icon {
+    font-size: 2.65em;
+    margin-top: 1.23em;
   }
 
 } /* end @media: max = 48em */
 
 /*****************************************************************
-@MEDIA: 48EM - 64EM
+@MEDIA: MIN = 64EM
 *****************************************************************/
 
-@media only screen and ( min-width: 72em ) {
+@media only screen and ( min-width: 64em ) {
 
-  .row-1,
-  .row-2,
-  .row-3 {
-    position: relative;
-    width: 100%;
-    margin: .35em 0;
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+    margin: .8em 0;
   }
 
-  .column {
-    width: 16%;
-    height: 12em;
+  .grid-container {
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .column-card {
+    width: 12.5%;
+    height: 9.35em;
+    margin-bottom: .35em;
   }
 
   .card-icon {
     font-size: 2.85em;
-    margin-top: 1.7em;
+    margin-top: 1.18em;
   }
 
 } /* end @media: 48em - 64em */
-
-/*****************************************************************
-@MEDIA: MIN = 64EM
-*****************************************************************/

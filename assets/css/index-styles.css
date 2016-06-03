@@ -1,0 +1,118 @@
+/*****************************************************************
+******************************************************************
+******************************************************************
+GLOBAL CSS RULES
+******************************************************************
+******************************************************************
+*****************************************************************/
+
+body {
+  background-color: #3f51b5;
+  width: 100%;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav li:nth-child(odd) {
+  -webkit-transform: perspective(20em) rotateY(-25deg);
+          transform: perspective(20em) rotateY(-25deg);
+}
+
+nav li:nth-child(even) {
+  -webkit-transform: perspective(20em) rotateY(25deg);
+          transform: perspective(20em) rotateY(25deg);
+}
+
+a:hover {
+
+}
+
+nav li {
+  cursor: pointer;
+}
+
+/*****************************************************************
+******************************************************************
+******************************************************************
+BEGIN MEDIA QUERIES
+******************************************************************
+******************************************************************
+*****************************************************************/
+
+/*****************************************************************
+@MEDIA: MAX = 48EM
+*****************************************************************/
+
+@media only screen and ( min-width: 2em ) {
+
+  h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
+
+} /* end @media: min = 64em
+
+
+/*****************************************************************
+@MEDIA: MIN = 48EM
+*****************************************************************/
+
+@media only screen and ( min-width: 28em ) {
+
+  h1 {
+    font-size: 3em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
+
+} /* end @media: max = 48em */
+
+/*****************************************************************
+@MEDIA: MIN = 64EM
+*****************************************************************/
+
+@media only screen and ( min-width: 64em ) {
+
+  h1 {
+    font-size: 4em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
+
+  nav {
+    margin-top: 6.5em;
+  }
+
+  nav li {
+    width: 10em;
+    padding: .7em .3em;
+    border: .24em solid #fff;
+    text-align: center;
+    font-size: 2.75em;
+    font-weight: 600;
+    margin: 0 auto 1em;
+  }
+
+  nav a::after {
+    content:'';
+    position:absolute;
+    top:-.5em; bottom:-.5em;
+    left:-.5em; right:-.5em;
+  }
+
+  nav li:hover,
+  nav a:hover {
+  overflow: hidden;
+  color: #3f51b5;
+  background: #fff;
+  opacity: .9;
+}
+
+} /* end @media: 48em - 64em */
