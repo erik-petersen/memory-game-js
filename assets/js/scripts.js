@@ -16,18 +16,86 @@ $(function() {
      12. if there is time, randomize the cards on refresh
   */
 
-  var $gameMain = $( ".game-main" );
-  var $seconds = $( ".seconds" );
-  var $minutes = $( ".minutes" );
-  var $hours = $( ".hours" );
+// code for game timer
+function pretty_time_string( number)  {
+  if( number < 10 ) {
+    return "0" + number;
+  }
 
+  else {
+    return "" + number;
+  }
+}
+
+var start = new Date;
+
+setInterval(function() {
+  var total_seconds = (new Date - start) / 1000;
+
+  var hours = Math.floor(total_seconds / 3600);
+  total_seconds = total_seconds % 3600;
+
+  var minutes = Math.floor(total_seconds / 60);
+  total_seconds = total_seconds % 60;
+
+  var seconds = Math.floor(total_seconds);
+
+  hours = pretty_time_string(hours);
+  minutes = pretty_time_string(minutes);
+  seconds = pretty_time_string(seconds);
+
+  var currentTimeString = hours + ":" + minutes + ":" + seconds;
+
+  $('.timer').text(currentTimeString);
+}, 1000);
+
+  // code for flipping the cards and displaying the icons
+  var $gameMain = $( ".game-main" );
+  var clicks = 0;
+  var firstThis;
+  var firstIconClass;
+  var firstClassIndex;
+  var secondThis;
+  var secondIconClass;
+  var secondClassIndex;
 
   $gameMain.on( "click", ".column-card", function() {
-    console.log( "Card Clucked" );
+    clicks++;
 
     if( $(this).children().is(":hidden") ) {
       $(this).children().show();
       $(this).addClass( "column-card-flip" );
+
+      // check how many cards are visible
+      if( clicks === 1 ) {
+        firstThis = $( this );
+        firstIconClass = $( this ).children().attr( "class" );
+        console.log( "One Cluck" );
+      }
+
+      else if( clicks === 2 ) {
+        secondThis = $( this );
+        secondIconClass = $( this ).children().attr( "class" );
+        secondClassIndex = $( this ).index();
+        console.log( "First Card Class: " + firstIconClass );
+        console.log( "Second Card Class: " + secondIconClass );
+        console.log( "Card Index: " + secondClassIndex );
+        console.log( "Two Clucks" );
+
+        if( firstIconClass === secondIconClass ) {
+          console.log( "They match!" );
+          clicks = 0;
+        }
+
+        else {
+          console.log( "They do not match" );
+          firstThis.children().delay(1000).hide();
+          firstThis.delay(1000).removeClass( "column-card-flip" );
+          secondThis.children().delay(1000).hide();
+          secondThis.delay(1000).removeClass( "column-card-flip" );
+          clicks = 0;
+        }
+      }
     }
 
     else {
@@ -36,20 +104,8 @@ $(function() {
       $(this).removeClass( "column-card-flip" );
     }
 
-    // check how many cards are visible
+
 
   });
-
-
-
-  function gameClock() {
-    jQuery.fx.interval = 1000;
-    for( var timer = 1; timer < 60; timer++ ) {
-      console.log(timer);
-    }
-
-  }
-
-
 
 })
