@@ -51,6 +51,9 @@ setInterval(function() {
 
   // code for flipping the cards and displaying the icons
   var $gameMain = $( ".game-main" );
+  var hearts = $( ".heart-lives" );
+  var correct = 0;
+  var incorrect = 0;
   var clicks = 0;
   var firstThis;
   var firstIconClass;
@@ -84,17 +87,34 @@ setInterval(function() {
 
         if( firstIconClass === secondIconClass ) {
           console.log( "They match!" );
+          correct++;
           clicks = 0;
+
+          if( correct === 2 ) {
+            setTimeout(function() {
+              alert( "You won!!!" );
+            }, 1000);
         }
+      }
 
         else {
-          console.log( "They do not match" );
-          firstThis.children().delay(1000).hide();
-          firstThis.delay(1000).removeClass( "column-card-flip" );
-          secondThis.children().delay(1000).hide();
-          secondThis.delay(1000).removeClass( "column-card-flip" );
-          clicks = 0;
-        }
+          setTimeout(function () {
+            incorrect++;
+            console.log( "They do not match" );
+            firstThis.children().delay(1000).hide();
+            firstThis.delay(1000).removeClass( "column-card-flip" );
+            secondThis.children().delay(1000).hide();
+            secondThis.delay(1000).removeClass( "column-card-flip" );
+            $(hearts[$(hearts).length - incorrect]).last().hide();
+            clicks = 0;
+
+            if( incorrect === 11 ) {
+              setTimeout(function() {
+                alert( "Game Over" );
+              }, 500);
+            } // end if
+          }, 1000);
+        } // end else
       }
     }
 
@@ -103,9 +123,5 @@ setInterval(function() {
       $(this).children().hide();
       $(this).removeClass( "column-card-flip" );
     }
-
-
-
   });
-
 })

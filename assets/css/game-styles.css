@@ -17,12 +17,12 @@ header {
   margin-bottom: .35em;
 }
 
-.fa-heart-1 {
-  padding-left: 10em;
-}
-
 .fa-heart {
   margin-left: .5em;
+}
+
+.hidden-icon {
+  visibility: hidden;
 }
 
 .game-clock {
@@ -67,40 +67,7 @@ BEGIN MEDIA QUERIES
 @MEDIA: MAX = 48EM
 *****************************************************************/
 
-@media only screen and ( min-width: 2em ) {
-
-  h1 {
-    text-align: center;
-    font-size: 2em;
-    font-weight: 600;
-    margin: .8em 0;
-  }
-
-  .grid-container {
-    width: 85%;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .column-card {
-    width: 48%;
-    height: 9em;
-    margin-bottom: .25em;
-  }
-
-  .card-icon {
-    font-size: 2.65em;
-    margin-top: 1.23em;
-  }
-
-} /* end @media: min = 64em
-
-
-/*****************************************************************
-@MEDIA: MIN = 48EM
-*****************************************************************/
-
-@media only screen and ( min-width: 28em ) {
+@media only screen and ( min-width: 20em ) {
 
   h1 {
     text-align: center;
@@ -109,22 +76,221 @@ BEGIN MEDIA QUERIES
     margin: .8em 0;
   }
 
+  .hearts-and-clocks {
+    position: relative;
+    width: 100%;
+    margin-bottom: .5em;
+  }
+
+  .hearts {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto .75em;
+    /*background: yellow;*/
+  }
+
+  .timer {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto .75em;
+    /*background: orange;*/
+  }
+
   .grid-container {
-    width: 85%;
+    width: 92%;
     text-align: center;
     margin: 0 auto;
+  }
+
+  .game-main {
+    margin: 0 0 0 4.15em;
   }
 
   .column-card {
     width: 20%;
     height: 9em;
     margin-bottom: .25em;
+    margin-right: .25em;
   }
 
   .card-icon {
+    position: absolute;
+    top: 0;
+    left: .85em;
     font-size: 2.65em;
     margin-top: 1.23em;
   }
+
+  .fa-heart-moveMe {
+    position: relative;
+    top: 1.25em;
+    right: 1.25em;
+    left: -.25em;
+  }
+
+} /* end @media: max = 48em */
+
+
+} /* end @media: min = 64em
+
+/*****************************************************************
+@MEDIA: MIN = 48EM
+*****************************************************************/
+
+@media only screen and ( min-width: 32em ) {
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
+
+  .hearts-and-clocks {
+    /*position: relative;*/
+    width: 100%;
+    margin-bottom: .5em;
+  }
+
+  .hearts {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto .75em;
+    background: yellow;
+  }
+
+  .timer {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto .75em;
+    background: orange;
+  }
+
+  .grid-container {
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .game-main {
+    margin: 0 0 0 5.15em;
+  }
+
+  /*.column-card {
+    position: absolute;
+    width: 22%;
+    height: 9em;
+    margin-bottom: .25em;
+    margin-right: .25em;
+  }*/
+
+  .card-icon {
+    position: absolute;
+    top: 0;
+    left: .85em;
+    font-size: 2.65em;
+    margin-top: 1.23em;
+  }
+
+  .card-icon {
+    position: absolute;
+    top: 1.15em;
+    left: 0;
+    font-size: 2.65em;
+    margin-top: 1.23em;
+  }
+
+  .fa-heart-moveMe {
+    position: absolute;
+    top: 1.25em;
+    right: 1.25em;
+    left: -3.5em;
+  }
+
+} /* end @media: max = 48em */
+
+
+/*****************************************************************
+@MEDIA: MIN = 48EM
+*****************************************************************/
+
+@media only screen and ( min-width: 46em ) {
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+    margin: .8em 0;
+  }
+
+  .hearts-and-clocks {
+    position: relative;
+    width: 100%;
+    margin-bottom: .5em;
+  }
+
+  .hearts {
+    width: 45%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    margin: 0 0 0 20%;
+    /*background: yellow;*/
+  }
+
+  .timer {
+    display: inline-block;
+    width: 7%;
+    margin-left: 7%;
+    /*background: orange;*/
+  }
+
+  .grid-container {
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .game-main {
+    margin: 0 0 0 7.15em;;
+  }
+
+  .column-card {
+    position: relative;
+    width: 20%;
+    height: 9em;
+    margin-bottom: .25em;
+    margin-right: .25em;
+  }
+
+  .card-icon {
+    position: absolute;
+    top: 0;
+    left: 1.25em;
+    right: 1.35em;
+    font-size: 2.65em;
+    margin-top: 1.23em;
+  }
+
+  .fa-heart-moveMe {
+    position: absolute;
+    top: 0
+    right: 1.25em;
+    left: .55em;
+  }
+
+
+  /*.card-icon {
+    position: relative;
+    top: 1.15em;
+    left: 0;
+    font-size: 2.65em;
+    margin-top: 1.23em;
+  }*/
 
 } /* end @media: max = 48em */
 
@@ -141,10 +307,36 @@ BEGIN MEDIA QUERIES
     margin: .8em 0;
   }
 
+  .hearts-and-clocks {
+    position: relative;
+    width: 100%;
+    margin-bottom: .5em;
+  }
+
+  .hearts {
+    width: 35%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    margin: 0 0 0 15%;
+    /*background: yellow;*/
+  }
+
+  .timer {
+    display: inline-block;
+    width: 5%;
+    margin-left: 30%;
+    /*background: orange;*/
+  }
+
   .grid-container {
     width: 85%;
     text-align: center;
     margin: 0 auto;
+  }
+
+  .game-main {
+    margin: 0 0 0 6.75em;;
   }
 
   .column-card {
@@ -156,13 +348,19 @@ BEGIN MEDIA QUERIES
   }
 
   .card-icon {
-    box-sizing: border-box;
     position: absolute;
     top: -.05em;
     right: .15em;
     bottom: .15em;
     left:.15em;
     font-size: 2.85em;
+  }
+
+  .fa-heart-moveMe {
+    position: absolute;
+    top: 0
+    right: 2em;
+    left: 0;
   }
 
 } /* end @media: 48em - 64em */
