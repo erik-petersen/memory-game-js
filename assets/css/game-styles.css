@@ -116,16 +116,15 @@ BEGIN MEDIA QUERIES
   }
 
   .card-icon {
-    position: absolute;
-    top: 0;
-    left: .85em;
-    font-size: 2.65em;
-    margin-top: 1.23em;
+    position: relative;
+    top: 1.65em;
+    right: .5em;
+    left: 0;
   }
 
   .fa-heart-moveMe {
     position: relative;
-    top: 1.25em;
+    top: 1.65em;
     right: 1.25em;
     left: -.25em;
   }
@@ -189,26 +188,17 @@ BEGIN MEDIA QUERIES
   }*/
 
   .card-icon {
-    position: absolute;
-    top: 0;
-    left: .85em;
-    font-size: 2.65em;
-    margin-top: 1.23em;
-  }
-
-  .card-icon {
-    position: absolute;
-    top: 1.15em;
+    position: relative;
+    top: 1.65em;
+    right: .5em;
     left: 0;
-    font-size: 2.65em;
-    margin-top: 1.23em;
   }
 
   .fa-heart-moveMe {
-    position: absolute;
-    top: 1.25em;
+    position: relative;
+    top: 1.65em;
     right: 1.25em;
-    left: -3.5em;
+    left: -.25em;
   }
 
 } /* end @media: max = 48em */
@@ -268,29 +258,18 @@ BEGIN MEDIA QUERIES
   }
 
   .card-icon {
-    position: absolute;
-    top: 0;
-    left: 1.25em;
-    right: 1.35em;
-    font-size: 2.65em;
-    margin-top: 1.23em;
+    position: relative;
+    top: 1.65em;
+    right: .5em;
+    left: 0;
   }
 
   .fa-heart-moveMe {
-    position: absolute;
-    top: 0
-    right: 1.25em;
-    left: .55em;
-  }
-
-
-  /*.card-icon {
     position: relative;
-    top: 1.15em;
-    left: 0;
-    font-size: 2.65em;
-    margin-top: 1.23em;
-  }*/
+    top: 1.65em;
+    right: 1.25em;
+    left: -.25em;
+  }
 
 } /* end @media: max = 48em */
 
@@ -348,19 +327,17 @@ BEGIN MEDIA QUERIES
   }
 
   .card-icon {
-    position: absolute;
-    top: -.05em;
-    right: .15em;
-    bottom: .15em;
-    left:.15em;
-    font-size: 2.85em;
+    position: relative;
+    top: 1.65em;
+    right: .5em;
+    left: 0;
   }
 
   .fa-heart-moveMe {
-    position: absolute;
-    top: 0
-    right: 2em;
-    left: 0;
+    position: relative;
+    top: 1.65em;
+    right: 1.25em;
+    left: -.25em;
   }
 
 } /* end @media: 48em - 64em */
