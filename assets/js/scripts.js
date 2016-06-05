@@ -29,7 +29,7 @@ function pretty_time_string( number)  {
 
 var start = new Date;
 
-setInterval(function() {
+var interval = setInterval(function() {
   var total_seconds = (new Date - start) / 1000;
 
   var hours = Math.floor(total_seconds / 3600);
@@ -90,9 +90,9 @@ setInterval(function() {
           correct++;
           clicks = 0;
 
-          if( correct === 2 ) {
+          if( correct === 14 ) {
             setTimeout(function() {
-              alert( "You won!!!" );
+              alert( "You won!!!  Way to go" );
             }, 1000);
         }
       }
@@ -110,8 +110,11 @@ setInterval(function() {
 
             if( incorrect === 11 ) {
               setTimeout(function() {
-                alert( "Game Over" );
+                $('.timer').text( "You Failed!!!");
+                alert( "Uffda!  That didn't go so well, did it?" );
               }, 500);
+
+              clearInterval(interval);
             } // end if
           }, 1000);
         } // end else
