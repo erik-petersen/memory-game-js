@@ -16,7 +16,7 @@ $(function() {
      12. if there is time, randomize the cards on refresh
   */
 
-// code for game timer
+// code for game timer...thank you Stack overflow http://stackoverflow.com/questions/2604450/how-to-create-a-jquery-clock-timer for the inspiration and help!!!
 function pretty_time_string( number)  {
   if( number < 10 ) {
     return "0" + number;
@@ -71,13 +71,13 @@ var interval = setInterval(function() {
 
       // check how many cards are visible
       if( clicks === 1 ) {
-        firstThis = $( this );
+        // firstThis = $( this );
         firstIconClass = $( this ).children().attr( "class" );
         console.log( "One Cluck" );
       }
 
       else if( clicks === 2 ) {
-        secondThis = $( this );
+        // secondThis = $( this );
         secondIconClass = $( this ).children().attr( "class" );
         secondClassIndex = $( this ).index();
         console.log( "First Card Class: " + firstIconClass );
